@@ -1,0 +1,223 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* 全体のスタイル */
+header {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    position: fixed; /* 画面上部に固定 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 0; /* 上下の余白 */
+    text-align: center;
+    box-shadow: 0px 4px 8px black;
+    z-index: 1000;
+}
+header nav ul {
+    margin-top: 3px;
+    display: flex;
+    text-decoration: underline;
+    list-style: none;
+    justify-content: flex-end;  /* Align items to the right */
+    margin-right: 50px;
+    gap: 20px;
+}
+header nav ul li a{
+    color: black;
+    text-decoration: none;
+}
+
+
+/* `main` の上に余白を追加して `.container` に被らないようにする */
+main {
+    margin-top: 160px; /* `.container` の高さより少し大きめの余白を設定 */
+    background-color: white;
+}
+
+.topic {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    border-left: 6px solid blue;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgb(89, 173, 215);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+/* トピックの固定動作 */
+.topic.fixed {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    z-index: 1000;
+}
+
+.topic-title {
+    background-color: blue;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+}
+.topic-content {
+    margin-left: 10px;
+    text-align: left;
+}
+
+.Youtuberink {
+    width: 80%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 3px solid #ff0000;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.Youtuberink h6{
+    text-decoration: underline;
+    margin-top: 5px;
+}
+.Youtuberink-title {
+    color: #ff0000;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 3px solid #ff0000;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.youtube-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.youtube-link a {
+    display: inline-block;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s; /* スムーズな変化 */
+    margin-left: 8px;
+    transition: transform 0.3s ease; /* ホバー時のスムーズな拡大 */
+}
+
+/* YouTubeチャンネルのリンクホバー時に大きくする */
+.youtube-link a:hover {
+    transform: scale(1.1); /* リンクを10%大きくする */
+}
+
+/* アイコンのスタイル修正：ホバー効果を大きくし、背景色を透明に */
+.youtube-icon a {
+    display: inline-block;
+    width: 100px; /* アイコンの幅 */
+    height: 100px; /* アイコンの高さ */
+    background-color: transparent; /* 背景色を透明に */
+    border: none; /* ボーダーを削除 */
+    transition: transform 0.3s ease; /* スムーズにアイコンが大きくなる */
+}
+
+.youtube-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* アイコンにホバー時に大きくなる効果 */
+.youtube-icon a:hover {
+    transform: scale(1.2); /* アイコンを20%大きくする */
+}
+
+
+/* 動画一覧セクション */
+.top-videos {  
+    width: 80%;
+    max-width: 820px;
+    margin: 80px auto 30px;
+    /* text-align: left; */
+}
+.top-videos-title {
+    /* font-family: 'Arial', sans-serif; */
+    font-size: 30px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    padding: 10px 105px; /* Adds space inside the border */
+    border: 3px solid #28a745; /* Green border */
+    border-radius: 10px; /* Rounded corners for the border */
+    margin-left: 110px;
+}
+.video-content {
+    display: flex;
+    align-items: center; /* Vertically align the image and text */
+    margin-bottom: 30px;
+}
+
+.video-content a {
+    margin-right: 20px; /* Space between the image and text */
+}
+
+.video-content img {
+    max-width: 200px; /* Control the size of the thumbnail */
+    margin-top: 20px;
+    border-radius: 10px; /* Optional: rounded corners for the thumbnail */
+}
+.video-description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 600px; /* Limit the width of the description */
+}
+.video-content a:hover {
+    transform: scale(1.2); /* アイコンを20%大きくする */
+}
+
+.video-item {
+    background-color: white;
+    height: 250px;
+    padding: 10px;
+    margin-bottom: 50px;
+    box-shadow: 0px 4px 8px rgb(236, 231, 139);
+    border-radius: 10px;
+}
+.video-item h2{
+    background-color: gold;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 10px;
+}
+.video-content {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
